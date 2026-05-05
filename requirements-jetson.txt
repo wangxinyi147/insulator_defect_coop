@@ -1,0 +1,30 @@
+# ==============================================
+# 绝缘子缺陷检测系统 - Jetson Nano 边缘端依赖
+# 适用: JetPack 4.6+ / Ubuntu 18.04 / Python 3.6+
+# ==============================================
+
+# ---- 系统依赖（需先安装） ----
+# sudo apt-get install -y python3-pip libopenblas-dev libatlas-base-dev
+# sudo apt-get install -y libjpeg-dev libpng-dev libtiff-dev
+# sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+
+# ---- ONNX Runtime GPU（Jetson ARM64 预编译包） ----
+# 从 NVIDIA 官方下载对应 JetPack 版本的 wheel:
+# https://developer.nvidia.com/downloads/computeworks/onnxruntime
+# 或 pip install 以下任一（需先确认 Jtop 版本）
+# onnxruntime-gpu>=1.15.0  # 默认 pip 无 ARM64 版本，需手动安装
+
+# ---- 核心依赖 ----
+numpy>=1.21.0,<1.25.0
+opencv-python-headless>=4.5.0
+Pillow>=8.0.0
+requests>=2.25.0
+pyyaml>=5.4.0
+
+# ---- TensorRT Python 绑定（JetPack 预装） ----
+# JetPack 自带 tensorrt 包，无需 pip 安装
+# 验证: python3 -c "import tensorrt; print(tensorrt.__version__)"
+
+# ---- OpenCV（优先使用 JetPack 自带） ----
+# JetPack 预装 opencv-python，如需更新:
+# pip3 install opencv-python-headless==4.5.5.62

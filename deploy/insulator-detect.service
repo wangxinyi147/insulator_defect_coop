@@ -1,0 +1,33 @@
+[Unit]
+Description=Insulator Defect Detection Edge Service
+Documentation=https://github.com/user/insulator_defect_coop
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=jetson
+WorkingDirectory=/home/jetson/insulator_defect/edge
+Environment="PYTHONUNBUFFERED=1"
+Environment="CLOUD_API_URL=http://192.168.1.200:5000/upload"
+
+# 边缘推理主程序（摄像头实时检测模式）
+# --source 0: 使用默认摄像头
+# 如需 RTSP 流: --source rtsp://camera_ip:554/stream
+ExecStart=/usr/bin/python3 /home/jetson/insulator_defect/edge/edge_inference.py --source 0
+
+# 自动重启配置
+Restart=always
+RestartSec=10
+
+# 资源限制（Jetson Nano 4GB）
+MemoryMax=1500M
+CPUQuota=300%
+
+# 日志输出
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=insulator-detect
+
+[Install]
+WantedBy=multi-user.target

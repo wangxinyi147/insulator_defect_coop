@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Claude Code
+.claude/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dataset (host on HuggingFace / Google Drive)
+cloud/data/
+
+# Large binary files (papers, documents)
+文献/
+*.docx
+*.pdf
+
+# Training outputs
+runs/
+edge/models/*.onnx
+edge/models/*.engine
+edge/models/*.trt
+edge/models/*.bak
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+
+# Model weights (large files)
+*.pt
+*.onnx
+*.engine

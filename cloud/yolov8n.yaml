@@ -1,0 +1,15 @@
+path: C:\Users\29270\Desktop\insulator_defect_coop\cloud\data
+
+train: images/train  # 相对 path 的路径
+val: images/val      # 相对 path 的路径
+test: images/test    # 相对 path 的路径
+
+# 类别数
+nc: 4
+
+# 类别名称
+names:
+  0: flashover
+  1: insulator
+  2: lose
+  3: damaged
