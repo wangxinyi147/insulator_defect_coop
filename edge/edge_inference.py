@@ -24,8 +24,8 @@ class EdgeConfig:
     IMG_SIZE = 640
     MULTI_SCALE = True
     SCALE_RATIOS = [0.8, 1.0, 1.2]
-    CLASS_NAMES = {0: "flashover", 1: "insulator", 2: "lose", 3: "damaged", 4: "pollution"}
-    CLASS_NAMES_CN = {0: "闪络", 1: "绝缘子", 2: "掉片", 3: "破损", 4: "污秽"}
+    CLASS_NAMES = {0: "flashover", 1: "insulator", 2: "lose", 3: "damaged"}
+    CLASS_NAMES_CN = {0: "闪络", 1: "绝缘子", 2: "掉片", 3: "破损"}
     CLOUD_API_URL = "http://127.0.0.1:5000/upload"
     FEEDBACK_DIR = Path(__file__).parent / "feedback_cache"
     UPLOAD_INTERVAL = 30

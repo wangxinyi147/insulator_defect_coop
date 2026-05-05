@@ -18,9 +18,8 @@ class DetConfig:
         1: "绝缘子",
         2: "掉片",
         3: "破损",
-        4: "污秽"
     }
-    DEFECT_CLASS_IDS = [0, 2, 3, 4]  # 0:闪络, 2:掉片, 3:破损, 4:污秽
+    DEFECT_CLASS_IDS = [0, 2, 3]  # 0:闪络, 2:掉片, 3:破损
 
     if os.path.exists("C:/Windows/Fonts/simhei.ttf"):
         CHINESE_FONT_PATH = "C:/Windows/Fonts/simhei.ttf"
